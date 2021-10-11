@@ -1,0 +1,24 @@
+/*------------------------
+        AUTO NUM
+-------------------------*/
+.auto-num {
+  counter-reset: row-num -1;
+}
+
+.auto-num tr {
+  counter-increment: row-num;
+}
+
+.auto-num tr td:first-child::before {
+  content: counter(row-num) ". ";
+}
+
+.custom-border {
+  border: 2px solid black;
+}
+.custom-border-top {
+  border-top: 4px solid blue;
+}
+.box-card {
+  border-radius: 5px;
+}
