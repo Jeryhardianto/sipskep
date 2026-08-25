@@ -1,13 +1,13 @@
 <?php 
 class App{
-    protected $controller = 'auth'; //DEFAULT Controller
+    protected $controller = 'landing'; //DEFAULT Controller
     protected $method = 'index'; //Method
     protected $params = [];
 
     public function __construct(){
         $url = $this->parseURL();
         // var_dump($url);
-        if (file_exists('./app/controllers/'. $url[0] . '.php')) {
+        if (isset($url[0]) && file_exists('./app/controllers/'. $url[0] . '.php')) {
             
             $this->controller = $url[0];
             unset($url[0]);

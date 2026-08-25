@@ -1,0 +1,40 @@
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html:ro
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php]
+
+  php:
+    build: .
+    environment:
+      BASEURL: http://localhost:8080/
+      DB_HOST: db
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: sipskep
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: sipskep
+    volumes:
+      - ./sipskep.sql:/docker-entrypoint-initdb.d/sipskep.sql:ro
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+volumes:
+  db_data:

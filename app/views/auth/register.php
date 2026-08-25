@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" method="POST" action="_signup">
+                    <form class="form-horizontal m-t-20" method="POST" action="<?= BASEURL ?>auth/_signup">
                         <div class="row p-b-30">
                             <div class="col-12">
                                 <div class="input-group mb-3">

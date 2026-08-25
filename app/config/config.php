@@ -1,8 +1,8 @@
 <?php 
-define('BASEURL', 'http://localhost:8012/sipskep/');
+define('BASEURL', getenv('BASEURL') ?: 'http://localhost:8012/sipskep/');
 
 //DB
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'sipskep');
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'sipskep');

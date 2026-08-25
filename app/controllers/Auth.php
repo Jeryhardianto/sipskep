@@ -45,21 +45,21 @@ class Auth extends Controller{
                     }
                 } else {
                      Flasher::setFlash('Silahkan melakukan aktivasi','email anda','red');
-                     header('Location:'.BASEURL);
+                     header('Location:'.BASEURL.'auth');
                      exit;
                 }
                    
 
             }else {
                 Flasher::setFlash('Email atau passowrd','salah','red');
-                header('Location:'.BASEURL);
+                header('Location:'.BASEURL.'auth');
                 exit;
             }
 
 
        }else {
          Flasher::setFlash('Email tidak','terdaftar','red');
-         header('Location:'.BASEURL);
+         header('Location:'.BASEURL.'auth');
          exit;
         }
     }
