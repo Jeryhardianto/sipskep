@@ -56,8 +56,10 @@ services:
     restart: unless-stopped
     networks: [default]
     environment:
-      MARIADB_ROOT_PASSWORD: ${DB_PASS}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASS}
       MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASS}
     volumes:
       # Seed hanya jalan saat volume db-data masih kosong.
       - ./sipskep.sql:/docker-entrypoint-initdb.d/sipskep.sql:ro
