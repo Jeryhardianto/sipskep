@@ -1,0 +1,4 @@
+.env
+.env.*
+!.env.prod.example
+.DS_Store

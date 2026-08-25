@@ -37,7 +37,7 @@
  <script src="<?= BASEURL ?>assets/libs/flot/jquery.flot.stack.js"></script>
  <script src="<?= BASEURL ?>assets/libs/flot/jquery.flot.crosshair.js"></script>
  <script src="<?= BASEURL ?>assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
- <script src="<?= BASEURL ?>dist/js/pages/chart/chart-page-init.js"></script>
+ <script src="<?= BASEURL ?>assets/dist/js/pages/chart/chart-page-init.js"></script>
  <script>
 $("#datepicker-autoclose").datepicker({
     dateFormat: "yy-mm-dd",
