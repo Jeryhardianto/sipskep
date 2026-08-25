@@ -41,6 +41,7 @@ services:
     # Read-only: aplikasi tidak pernah menulis ke direktorinya sendiri.
     volumes:
       - .:/var/www/html:ro
+      - ./docker/php-prod.ini:/usr/local/etc/php/conf.d/zz-prod.ini:ro
     depends_on:
       db:
         condition: service_healthy
